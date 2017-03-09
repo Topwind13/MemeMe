@@ -1,5 +1,5 @@
 //
-//  MemeViewController.swift
+//  MemeEditorViewController.swift
 //  MemeMe
 //
 //  Created by TOP on 3/7/2560 BE.
@@ -10,13 +10,13 @@ import UIKit
 
 
 struct Meme {
-    var topText: String
-    var bottomText: String
-    var originalImage: UIImage
-    var image: UIImage
+    let topText: String
+    let bottomText: String
+    let originalImage: UIImage
+    let image: UIImage
 }
 
-class MemeViewController: UIViewController {
+class MemeEditorViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -174,7 +174,7 @@ class MemeViewController: UIViewController {
 }
 
 
-extension MemeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -191,7 +191,7 @@ extension MemeViewController: UIImagePickerControllerDelegate, UINavigationContr
 }
 
 
-extension MemeViewController: UITextFieldDelegate{
+extension MemeEditorViewController: UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
