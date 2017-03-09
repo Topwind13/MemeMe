@@ -8,14 +8,6 @@
 
 import UIKit
 
-
-struct Meme {
-    let topText: String
-    let bottomText: String
-    let originalImage: UIImage
-    let image: UIImage
-}
-
 class MemeEditorViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -50,7 +42,7 @@ class MemeEditorViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        shareButton.isEnabled = imageView != nil
+        shareButton.isEnabled = imageView.image != nil
         subscribeToKeyboardNotifications()
         
         

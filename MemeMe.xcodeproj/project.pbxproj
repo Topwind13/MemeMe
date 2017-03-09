@@ -14,6 +14,7 @@
 		EEF390E81E6E823000B4C96C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF390E61E6E823000B4C96C /* LaunchScreen.storyboard */; };
 		EEF390F31E6E823000B4C96C /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF390F21E6E823000B4C96C /* MemeMeTests.swift */; };
 		EEF390FE1E6E823000B4C96C /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF390FD1E6E823000B4C96C /* MemeMeUITests.swift */; };
+		EEF3910C1E7194EA00B4C96C /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF3910B1E7194EA00B4C96C /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		EEF390F91E6E823000B4C96C /* MemeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF390FD1E6E823000B4C96C /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		EEF390FF1E6E823000B4C96C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF3910B1E7194EA00B4C96C /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				EEF390E41E6E823000B4C96C /* Assets.xcassets */,
 				EEF390E61E6E823000B4C96C /* LaunchScreen.storyboard */,
 				EEF390E91E6E823000B4C96C /* Info.plist */,
+				EEF3910B1E7194EA00B4C96C /* Meme.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF3910C1E7194EA00B4C96C /* Meme.swift in Sources */,
 				EEF390E01E6E823000B4C96C /* MemeEditorViewController.swift in Sources */,
 				EEF390DE1E6E823000B4C96C /* AppDelegate.swift in Sources */,
 			);
