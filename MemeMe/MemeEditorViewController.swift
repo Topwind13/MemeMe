@@ -21,7 +21,8 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var imagePickerToolbar: UIToolbar!
     @IBOutlet weak var shareCancelToolbar: UIToolbar!
     
-    var meme: Meme?
+    @IBOutlet weak var shareCancelNavbar: UINavigationItem!
+    
     
     let memeTextAttributes:[String:Any] = [
         NSStrokeColorAttributeName: UIColor .black,
@@ -113,8 +114,13 @@ class MemeEditorViewController: UIViewController {
     
     func saveMeme(memeImage: UIImage) {
         // Create the meme
-        meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, image: memeImage)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageView.image!, image: memeImage)
         
+        
+        // Add it to the memes array in the Application Delegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     
     func generateMemedImage() -> UIImage {
@@ -135,6 +141,8 @@ class MemeEditorViewController: UIViewController {
         return memedImage
     }
     
+    
+
     @IBAction func shareMeme(_ sender: Any) {
         let memeImage = generateMemedImage()
         let controller = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
@@ -143,18 +151,21 @@ class MemeEditorViewController: UIViewController {
             if complete {
                 self.saveMeme(memeImage: memeImage)
                 controller.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
         self.present(controller, animated: true, completion: nil)
         
     }
     
+
     @IBAction func cancelMeme(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
     private func toolbarHidden(_ hidden: Bool) {
-        shareCancelToolbar.isHidden = hidden
+        
+        shareCancelNavbar.accessibilityElementsHidden = hidden
         imagePickerToolbar.isHidden = hidden
     }
     
