@@ -16,6 +16,8 @@ class MemeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         samplyMeme()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
     }
     
@@ -38,11 +40,6 @@ class MemeTableViewController: UITableViewController {
         memes = appDelegate.memes
         tableView.reloadData()
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -104,14 +101,43 @@ class MemeTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destinationViewController.
+//        // Pass the selected object to the new view controller.
+//        super.prepare(for: segue, sender: sender)
+//        
+//        if segue.identifier == "showDetail" {
+//            guard let controller = segue.destination as? DetailViewController else {
+//                fatalError("Unexpected destination: \(segue.destination)")
+//            }
+//            guard let selectedCell = sender as? MemeTableViewCell else {
+//                fatalError("Unexpected sender: \(sender)")
+//            }
+//            guard let indexPath = tableView.indexPath(for: selectedCell) else {
+//                fatalError("The selected cell is not being displayed by the table")
+//            }
+//            controller.memeImage.image = memes[(indexPath.row)].image
+//        }
+//        
+//    }
+ 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let meme = memes[indexPath.row]
+        
+        let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailController.meme = meme
+        
+        self.navigationController?.pushViewController(detailController, animated: true)
+        
     }
-    */
+    
+    
+ 
 
 }

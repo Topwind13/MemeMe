@@ -55,11 +55,6 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     /*
      // MARK: - Navigation
      
@@ -125,5 +120,13 @@ class MemeCollectionViewController: UICollectionViewController {
      }
      */
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let meme = memes[indexPath.row]
+        
+        let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailController.meme = meme
+        
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
 
 }

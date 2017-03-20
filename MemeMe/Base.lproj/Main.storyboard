@@ -56,7 +56,7 @@
                     <navigationItem key="navigationItem" title="Sent Meme" id="BIg-io-kE7">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yhg-oa-q07">
                             <connections>
-                                <segue destination="LN1-EK-gvR" kind="presentation" id="LKf-0T-ECA"/>
+                                <segue destination="LN1-EK-gvR" kind="presentation" identifier="AddMeme" id="LKf-0T-ECA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -185,7 +185,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fUC-Gj-JEK">
-                                <rect key="frame" x="20" y="602" width="374" height="40"/>
+                                <rect key="frame" x="20" y="612" width="374" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-uX-OUN">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -221,7 +221,7 @@
                         <constraints>
                             <constraint firstItem="fUC-Gj-JEK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1zW-iI-5Bc"/>
                             <constraint firstItem="DP5-vI-FXc" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="21z-4o-qsg"/>
-                            <constraint firstItem="DP5-vI-FXc" firstAttribute="top" secondItem="fUC-Gj-JEK" secondAttribute="bottom" constant="50" id="2Z1-vb-gEZ"/>
+                            <constraint firstItem="DP5-vI-FXc" firstAttribute="top" secondItem="fUC-Gj-JEK" secondAttribute="bottom" constant="40" id="2Z1-vb-gEZ"/>
                             <constraint firstItem="DP5-vI-FXc" firstAttribute="top" secondItem="1K6-xq-C7T" secondAttribute="bottom" id="4Ru-Uh-Kb8"/>
                             <constraint firstItem="iI0-X9-ETG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Hxu-Pg-9t1"/>
                             <constraint firstItem="iI0-X9-ETG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="OrI-Sl-6r5"/>
@@ -232,7 +232,6 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DP5-vI-FXc" secondAttribute="bottom" id="i51-nR-aPp" userLabel="ImagePicker Toolbar.bottom = Bottom Layout Guide.top"/>
                             <constraint firstItem="1K6-xq-C7T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qnw-w2-N4H"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iI0-X9-ETG" secondAttribute="trailing" id="rBN-Qg-ugC"/>
-                            <constraint firstItem="DP5-vI-FXc" firstAttribute="top" secondItem="fUC-Gj-JEK" secondAttribute="bottom" constant="50" id="rBm-Ku-tMp"/>
                             <constraint firstItem="DP5-vI-FXc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="sGq-jw-C9Q"/>
                         </constraints>
                     </view>
@@ -266,6 +265,50 @@
             </objects>
             <point key="canvasLocation" x="3894.202898550725" y="125.54347826086958"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="iqe-eJ-s7J">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="5OH-wE-Jm1" customClass="DetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t5W-GM-qFQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nfe-zs-Ng3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gln-DD-4ig">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AtQ-Ev-Ing">
+                                <rect key="frame" x="20" y="20" width="374" height="716"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultphoto" translatesAutoresizingMaskIntoConstraints="NO" id="j1b-48-15L">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="716"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="j1b-48-15L" firstAttribute="centerX" secondItem="AtQ-Ev-Ing" secondAttribute="centerX" id="7yg-8G-UKd"/>
+                                    <constraint firstItem="j1b-48-15L" firstAttribute="centerY" secondItem="AtQ-Ev-Ing" secondAttribute="centerY" id="Pk1-54-Mo9"/>
+                                    <constraint firstItem="j1b-48-15L" firstAttribute="width" relation="lessThanOrEqual" secondItem="AtQ-Ev-Ing" secondAttribute="width" id="i0Y-Ie-0zZ"/>
+                                    <constraint firstItem="j1b-48-15L" firstAttribute="height" relation="lessThanOrEqual" secondItem="AtQ-Ev-Ing" secondAttribute="height" id="qBg-m9-3gI"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AtQ-Ev-Ing" firstAttribute="top" secondItem="t5W-GM-qFQ" secondAttribute="bottom" id="KaJ-r7-BBO"/>
+                            <constraint firstItem="Nfe-zs-Ng3" firstAttribute="top" secondItem="AtQ-Ev-Ing" secondAttribute="bottom" id="YV9-CM-gkQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AtQ-Ev-Ing" secondAttribute="trailing" id="cKS-Qr-HSN"/>
+                            <constraint firstItem="AtQ-Ev-Ing" firstAttribute="leading" secondItem="Gln-DD-4ig" secondAttribute="leadingMargin" id="ntP-uJ-qje"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lZ3-pw-Fun"/>
+                    <connections>
+                        <outlet property="memeImage" destination="j1b-48-15L" id="B1r-aa-8zI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcX-0f-YhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2986" y="1034"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Xcb-CP-S5U">
             <objects>
@@ -288,7 +331,7 @@
         <scene sceneID="Yub-wq-MEh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SF1-iH-slD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" selectedImage="collection" id="TPI-RC-vwy"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="collection" selectedImage="collection" id="TPI-RC-vwy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iXJ-8S-nOx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -307,7 +350,7 @@
         <scene sceneID="pE9-KL-2Fu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cu2-PC-hlI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" selectedImage="table" id="k4g-yl-pYc"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="table" selectedImage="table" id="k4g-yl-pYc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u3G-tx-2WP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -320,7 +363,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZL5-HE-qQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1348" y="481"/>
+            <point key="canvasLocation" x="1120" y="482"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="odE-jM-vSz">
