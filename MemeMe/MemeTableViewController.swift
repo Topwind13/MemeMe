@@ -20,7 +20,8 @@ class MemeTableViewController: UITableViewController {
 
     }
     
-    func samplyMeme() {
+    // meme sample for test purpose.
+    func sampleMeme() {
         if let image = UIImage(named: "defaultphoto") {
             let meme = Meme(topText: "new", bottomText: "Test", originalImage: image, image: image)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -38,6 +39,7 @@ class MemeTableViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         tableView.reloadData()
+        self.tabBarController?.tabBar.isHidden = false
         
     }
 

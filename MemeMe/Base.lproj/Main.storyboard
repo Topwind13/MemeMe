@@ -14,7 +14,7 @@
         <scene sceneID="z4A-0Z-kKO">
             <objects>
                 <collectionViewController id="rbE-UB-zOR" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="mBJ-Y1-hTB">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mBJ-Y1-hTB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -208,7 +208,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="xAN-qc-1ti"/>
-                                    <barButtonItem title="Album" style="plain" id="RVg-xk-qey">
+                                    <barButtonItem tag="1" title="Album" style="plain" id="RVg-xk-qey">
                                         <connections>
                                             <action selector="pickImageFromAlbum:" destination="BYZ-38-t0r" id="Qhy-qC-xqR"/>
                                         </connections>
