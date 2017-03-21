@@ -110,6 +110,7 @@ class MemeEditorViewController: UIViewController {
     func unsubscribeFromKeyboardNotifications() {
         
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
     func saveMeme(memeImage: UIImage) {
@@ -120,7 +121,6 @@ class MemeEditorViewController: UIViewController {
         // Add it to the memes array in the Application Delegate
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memes.append(meme)
-        _ = navigationController?.popToRootViewController(animated: true)
     }
     
     func generateMemedImage() -> UIImage {
