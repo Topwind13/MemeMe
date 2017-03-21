@@ -15,7 +15,6 @@ class MemeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        samplyMeme()
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
